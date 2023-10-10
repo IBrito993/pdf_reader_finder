@@ -30,7 +30,7 @@ class PDFReader:
 
 # Set your OpenAI API key here
 openai.organization = "org-X9Hw9MAngHB0YWLljgwwEd5M"
-openai.api_key = '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'
+openai.api_key = ''
 
 def generate_summary_from_text(text):
     prompt = f"Can you write a comprehensive summary in french of the most important events of the following text, every event on a individual numerated paragraph with a maximum of 7 paragraphs:{text}"
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     start_page = 31
     end_page = 32
     extracted_content = pdf_reader.extract_content_from_page_to_page(start_page, end_page)
-    # print(f"\nExtracted Content from page {start_page} to page {end_page}:\n{extracted_content}")
+    print(f"\nExtracted Content from page {start_page} to page {end_page}:\n{extracted_content}")
 
     summary = generate_summary_from_text(extracted_content)
     print("\nGenerated Summary:")
